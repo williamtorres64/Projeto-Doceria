@@ -4,7 +4,7 @@
     <!-- Configurações básicas do documento -->
     <meta charset="UTF-8"> <!-- Codificação de caracteres -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
-    <title>Novilho Cortes</title> <!-- Título da página -->
+    <title>VAVA Doces</title> <!-- Título da página -->
     <link rel="stylesheet" href="estilo.css"> <!-- Arquivo CSS principal -->
 </head>
 <body>

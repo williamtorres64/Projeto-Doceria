@@ -7,7 +7,7 @@
     <!-- Meta tags básicas para configuração da página -->
     <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura viewport para responsividade -->
-    <title>Novilho Cortes</title> <!-- Título da página que aparece na aba do navegador -->
+    <title>VAVA Doces</title> <!-- Título da página que aparece na aba do navegador -->
     <link rel="stylesheet" href="estilo.css"> <!-- Link para o arquivo CSS de estilos -->
 </head>
 

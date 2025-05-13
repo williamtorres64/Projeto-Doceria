@@ -11,7 +11,7 @@ if ($_SESSION['logado'] !== true) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novilho Cortes</title>
+    <title>VAVA Doces</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
