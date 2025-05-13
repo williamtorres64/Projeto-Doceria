@@ -54,7 +54,7 @@ if (!$stmt->execute()) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compra Finalizada - Novilho Cortes</title>
+    <title>Compra Finalizada - VAVA Doces</title>
     <link rel="stylesheet" href="estilo.css">
     <style>
         .mensagem-sucesso {
@@ -98,7 +98,7 @@ if (!$stmt->execute()) {
         <div id="conteudo">
             <div class="mensagem-sucesso">
                 <h2>🎉 Compra realizada com sucesso!</h2>
-                <p>Obrigado por escolher a Novilho Cortes.</p>
+                <p>Obrigado por escolher a VAVA Doces.</p>
                 <p>Número da sua compra: <strong>#<?php echo $compraId; ?></strong></p>
                 <p>Entraremos em contato em breve com mais detalhes sobre a entrega.</p>
                 <a href="index.php" class="botao">🏠 Voltar para a página inicial</a>

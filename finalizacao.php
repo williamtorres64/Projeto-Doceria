@@ -30,7 +30,7 @@ $rs = mysqli_fetch_assoc($resultado);
     <!-- Metadados essenciais -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novilho Cortes - Finalização</title>
+    <title>VAVA Doces - Finalização</title>
     <link rel="stylesheet" href="estilo.css"> <!-- CSS principal -->
 </head>
 

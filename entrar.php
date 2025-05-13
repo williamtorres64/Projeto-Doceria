@@ -5,7 +5,7 @@
     <!-- Configurações básicas da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novilho (Login)</title>
+    <title>VAVA Doces (Login)</title>
     <link rel="stylesheet" href="estilo.css"> <!-- Estilo principal -->
 </head>
 <body>

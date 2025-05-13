@@ -5,7 +5,7 @@
     <!-- Metadados básicos da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novilho (Painel)</title>
+    <title>VAVA Doces (Painel)</title>
     <!-- Link para o arquivo CSS -->
     <link rel="stylesheet" href="estilo.css">
     <style>

@@ -41,7 +41,7 @@ if ($id != '') {
     <!-- Configurações básicas da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novilho (Cadastro)</title>
+    <title>VAVA Doces (Cadastro)</title>
     <link rel="stylesheet" href="estilo.css"> <!-- Arquivo de estilos CSS -->
 </head>
 
