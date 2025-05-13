@@ -1,13 +1,13 @@
-use novilho;
+use vava_doces;
 
 -- TABELAS DE DOMÍNIO
 INSERT INTO `categoria` (`id`, `nome`) VALUES
-(1, 'Bovinos'),
-(2, 'Aves'),
-(3, 'Suínos'),
-(4, 'Peixes'),
-(5, 'Bebidas'),
-(6, 'Churrasco');
+(1, 'Bolos'),
+(2, 'Doces Finos'),
+(3, 'Sobremesas de Pote'),
+(4, 'Brownies'),
+(5, 'Cookies'),
+(6, 'Bebidas');
 
 INSERT INTO `formaPagamento` (`id`, `nome`) VALUES
 (1, 'PIX'),
@@ -44,76 +44,81 @@ INSERT INTO `usuario` (`id`, `cpf`, `nome`, `endereco`, `enderecoNumero`, `compl
 (11, '00456700000', 'Administrador', 'Rua 404', '404', 'Apto 505', '00000000', 'admin@gmail.com', '123', '11112345111', 2);
 
 -- PRODUTOS – dados coerentes
-DELETE FROM produto;                     -- opcional: limpa tabela antes
-INSERT INTO `produto`
-(`nome`, `categoriaId`, `valor`, `descricao`, `nomeImagem`, `tipoQuantidadeId`) VALUES
-('Picanha Uruguaia',              1, ROUND(RAND()*150+50,2),  'Deliciosa picanha de origem Uruguaia, macia e suculenta.',                     'imagens/picanha_uruguaia.png',        2),
-('Carvão Vegetal 5kg',            6, ROUND(RAND()*40 +15,2),  'Saco de carvão de reflorestamento de alta qualidade para seu churrasco.',      'imagens/carvao_5kg.png',              1),
-('Cerveja Artesanal IPA',         5, ROUND(RAND()*20 + 8,2),  'Cerveja IPA lupulada e refrescante, perfeita para acompanhar carnes grelhadas.','imagens/cerveja_ipa.png',             1),
-('Linguiça Toscana Tradicional',  3, ROUND(RAND()*35 +15,2),  'Linguiça toscana suína frescal com tempero tradicional.',                      'imagens/linguica_toscana.png',        2),
-('Kit Utensílios para Churrasco', 6, ROUND(RAND()*100+50,2),  'Conjunto com garfo trinchante, faca e pegador para churrasco.',                'imagens/kit_utensilios.png',          1),
-('Entrecôte Angus',               1, ROUND(RAND()*180+60,2),  'Corte nobre de Entrecôte Angus, marmorizado e saboroso.',                      'imagens/entrecote_angus.png',         2),
-('Refrigerante Cola 2L',          5, ROUND(RAND()*10 + 4,2),  'Refrigerante sabor cola em garrafa PET de 2 litros.',                          'imagens/refri_cola_2l.png',           1),
-('Pão de Alho Tradicional',       6, ROUND(RAND()*15 + 5,2),  'Delicioso pão de alho pronto para assar na brasa.',                             'imagens/pao_de_alho.png',             1),
-('Assado de Tira',                1, ROUND(RAND()*160+50,2),  'Corte clássico para churrasco, muito saboroso e suculento.',                   'imagens/assado_de_tira.png',          2),
-('Água Mineral sem Gás 1.5L',     5, ROUND(RAND()*5  + 2,2),  'Garrafa de água mineral natural sem gás.',                                     'imagens/agua_sem_gas.png',            1),
-('Maminha Maturada',              1, ROUND(RAND()*140+40,2),  'Maminha selecionada e maturada para garantir maciez extra.',                  'imagens/maminha_maturada.png',        2),
-('Sal Grosso para Churrasco',     6, ROUND(RAND()*12 + 5,2),  'Sal grosso iodado ideal para temperar carnes na brasa.',                       'imagens/sal_grosso.png',              1),
-('Cerveja Lager Nacional',        5, ROUND(RAND()*10 + 4,2),  'Cerveja Lager leve e refrescante.',                                            'imagens/cerveja_lager.png',           1),
-('Fraldinha Red Series',          1, ROUND(RAND()*130+40,2),  'Corte especial de fraldinha com fibras macias e sabor acentuado.',             'imagens/fraldinha_red.png',           2),
-('Espeto Duplo Cromado',          6, ROUND(RAND()*30 +10,2),  'Espeto duplo resistente com acabamento cromado.',                              'imagens/espeto_duplo.png',            1),
-('Queijo Coalho Tradicional',     6, ROUND(RAND()*25 +10,2),  'Queijo coalho frescal, perfeito para assar no churrasco.',                     'imagens/queijo_coalho.png',           1),
-('Costela Janela Bovina',         1, ROUND(RAND()*90 +30,2),  'Corte suculento da costela bovina, ideal para longos períodos de cozimento.',  'imagens/costela_janela.png',          2),
-('Guaraná Antartica 2L',          5, ROUND(RAND()*10 + 4,2),  'Refrigerante sabor guaraná em garrafa PET de 2 litros.',                       'imagens/guarana_2l.png',              1),
-('Farofa Tradicional Pronta',     6, ROUND(RAND()*18 + 7,2),  'Farofa temperada pronta para acompanhar seu churrasco.',                       'imagens/farofa_pronta.png',           1),
-('Sobrecoxa de Frango Temperada', 2, ROUND(RAND()*20 + 8,2),  'Sobrecoxa de frango temperada, pronta para grelhar.',                          'imagens/sobrecoxa_temperada.png',     2),
-('Contra Filé Grill',             1, ROUND(RAND()*170+55,2),  'Corte macio, ideal para grelhar, com boa capa de gordura.',                    'imagens/contrafile_grill.png',        2),
-('Asa de Frango Temperada',       2, ROUND(RAND()*25 +10,2),  'Asas de frango marinadas em tempero especial.',                                'imagens/asa_frango_temp.png',         2),
-('Pack Cerveja Lager (12 latas)', 5, ROUND(RAND()*50 +20,2),  'Pacote com 12 latas de cerveja Lager.',                                        'imagens/pack_lager_12.png',           1),
-('Faca para Churrasco 8"',        6, ROUND(RAND()*80 +30,2),  'Faca de aço inoxidável com lâmina de 8".',                                      'imagens/faca_churrasco8.png',         1),
-('Queijo Mussarela Trançado',     6, ROUND(RAND()*40 +15,2),  'Queijo mussarela trançado, delicioso grelhado.',                               'imagens/mussarela_trancado.png',      1),
-('Cupim Bovino',                  1, ROUND(RAND()*80 +30,2),  'Corte com gordura entremeada, ideal para longos cozimentos.',                  'imagens/cupim_bovino.png',            2),
-('Água Tônica Lata',              5, ROUND(RAND()*6  + 3,2),  'Lata de água tônica, refrescante e versátil.',                                 'imagens/agua_tonica_lata.png',        1),
-('Linguiça de Frango com Queijo', 2, ROUND(RAND()*32 +18,2),  'Linguiça de frango recheada com queijo.',                                      'imagens/linguica_frango_queijo.png',  2),
-('Avental para Churrasqueiro',    6, ROUND(RAND()*60 +25,2),  'Avental resistente para proteger durante o churrasco.',                        'imagens/avental_churras.png',         1),
-('Maminha Grill',                 1, ROUND(RAND()*130+45,2),  'Corte macio da maminha, ótimo para grelhar.',                                  'imagens/maminha_grill.png',           2),
-('Suco de Laranja Integral 1L',   5, ROUND(RAND()*12 + 5,2),  'Suco de laranja 100% integral, sem adição de açúcar.',                         'imagens/suco_laranja_1l.png',         1),
-('Ponta do Peito Bovina',         1, ROUND(RAND()*75 +25,2),  'Corte dianteiro saboroso quando cozido lentamente.',                           'imagens/ponta_peito.png',             2),
-('Molho Barbecue Tradicional',    6, ROUND(RAND()*18 + 7,2),  'Molho barbecue clássico para acompanhar carnes.',                              'imagens/molho_bbq.png',               1);
+DELETE FROM produto; -- limpa tabela antes
+
+INSERT INTO produto
+(nome, categoriaId, valor, descricao, nomeImagem, tipoQuantidadeId) VALUES
+('Bolo de Chocolate Gourmet',      1, ROUND(RAND()*60 + 40,2), 'Bolo de massa fofa com recheio e cobertura de ganache de chocolate meio-amargo.',      'imagens/bolo_chocolate.png',          1),
+('Bolo Red Velvet',                1, ROUND(RAND()*60 + 45,2), 'Clássico bolo vermelho com creme de cream-cheese.',                                   'imagens/bolo_red_velvet.png',         1),
+('Bolo de Cenoura com Brigadeiro', 1, ROUND(RAND()*50 + 35,2), 'Bolo de cenoura macio coberto com brigadeiro cremoso.',                               'imagens/bolo_cenoura.png',            1),
+('Bolo Chantilly & Morangos',      1, ROUND(RAND()*65 + 45,2), 'Camadas de pão-de-ló, chantilly e morangos frescos.',                                   'imagens/bolo_morango.png',            1),
+('Bolo de Pistache',               1, ROUND(RAND()*70 + 50,2), 'Bolo sofisticado com creme de pistache e cobertura crocante.',                         'imagens/bolo_pistache.png',           1),
+('Bolo KitKat',                    1, ROUND(RAND()*70 + 55,2), 'Bolo de chocolate decorado com barras de KitKat e M&M’s.',                             'imagens/bolo_kitkat.png',             1),
+('Bolo Limão Siciliano',           1, ROUND(RAND()*55 + 35,2), 'Bolo refrescante com creme suave de limão siciliano.',                                 'imagens/bolo_limao.png',              1),
+('Naked Cake Frutas Vermelhas',    1, ROUND(RAND()*75 + 55,2), 'Naked cake recheado com creme leve e frutas vermelhas.',                               'imagens/naked_cake.png',              1),
+
+('Brigadeiro Gourmet',             2, ROUND(RAND()*2  + 3 ,2), 'Clássico brigadeiro feito com chocolate 70% cacau.',                                   'imagens/brigadeiro.png',              1),
+('Beijinho de Coco',               2, ROUND(RAND()*2  + 3 ,2), 'Docinho de leite condensado com coco ralado e cravo.',                                 'imagens/beijinho.png',                1),
+('Trufa Meio Amargo',              2, ROUND(RAND()*4  + 4 ,2), 'Trufa coberta com cacau em pó e recheio cremoso.',                                     'imagens/trufa.png',                   1),
+('Mini Cheesecake Frutas',         2, ROUND(RAND()*6  + 6 ,2), 'Base crocante, creme de queijo e calda de frutas vermelhas.',                          'imagens/mini_cheesecake.png',         1),
+('Macaron Framboesa',              2, ROUND(RAND()*3  + 5 ,2), 'Macaron crocante com recheio suave de framboesa.',                                     'imagens/macaron.png',                 1),
+('Tartelete de Limão',             2, ROUND(RAND()*6  + 6 ,2), 'Mini tarte de massa doce com curd de limão e merengue.',                                'imagens/tartelete_limao.png',         1),
+('Bombom Ferrero Caseiro',         2, ROUND(RAND()*4  + 5 ,2), 'Bombom de avelã envolto em chocolate e wafer crocante.',                               'imagens/bombom_ferrero.png',          1),
+
+('Pavê de Chocolate no Pote',      3, ROUND(RAND()*8  + 10,2), 'Camadas de creme, biscoito e ganache no pote individual.',                            'imagens/pave_pote.png',               1),
+('Banoffee no Pote',               3, ROUND(RAND()*8  + 10,2), 'Sobremesa de banana, doce de leite e chantilly no pote.',                              'imagens/banoffee_pote.png',           1),
+('Mousse de Maracujá',             3, ROUND(RAND()*6  + 8 ,2), 'Mousse aerado de maracujá com calda de fruta fresca.',                                 'imagens/mousse_maracuja.png',         1),
+('Tiramisù no Pote',               3, ROUND(RAND()*9  + 12,2), 'Clássico italiano com mascarpone e café em porção individual.',                       'imagens/tiramisu_pote.png',           1),
+('Pudim de Leite',                 3, ROUND(RAND()*7  + 8 ,2), 'Tradicional pudim de leite condensado com calda de caramelo.',                        'imagens/pudim_pote.png',              1),
+('Brownie no Pote',                3, ROUND(RAND()*8  + 10,2), 'Camadas de brownie, brigadeiro e ganache em pote.',                                   'imagens/brownie_pote.png',            1),
+
+('Brownie Tradicional',            4, ROUND(RAND()*6  + 7 ,2), 'Brownie denso de chocolate meio-amargo.',                                             'imagens/brownie.png',                 1),
+('Brownie com Nutella',            4, ROUND(RAND()*7  + 8 ,2), 'Brownie recheado e coberto com creme de avelã.',                                       'imagens/brownie_nutella.png',         1),
+('Blondie de Chocolate Branco',    4, ROUND(RAND()*6  + 7 ,2), 'Versão clara do brownie com gotas de chocolate branco.',                              'imagens/blondie.png',                 1),
+('Brownie Caramelo Salgado',       4, ROUND(RAND()*7  + 8 ,2), 'Brownie com cobertura de caramelo salgado artesanal.',                                 'imagens/brownie_caramelo.png',        1),
+
+('Cookie Chocolate Chip',          5, ROUND(RAND()*3  + 4 ,2), 'Cookie amanteigado recheado com gotas de chocolate.',                                  'imagens/cookie_chip.png',             1),
+('Cookie Red Velvet',              5, ROUND(RAND()*3  + 4 ,2), 'Cookie macio sabor red velvet com gotas de chocolate branco.',                         'imagens/cookie_redvelvet.png',        1),
+('Cookie M&M’s',                   5, ROUND(RAND()*3  + 4 ,2), 'Cookie crocante recheado de confeitos coloridos.',                                     'imagens/cookie_mms.png',              1),
+('Cookie Aveia & Passas',          5, ROUND(RAND()*2  + 3 ,2), 'Cookie funcional com aveia, canela e passas.',                                         'imagens/cookie_aveia.png',            1),
+('Cookie Double Chocolate',        5, ROUND(RAND()*3  + 4 ,2), 'Cookie intenso com massa e gotas de chocolate escuro.',                                'imagens/cookie_double.png',           1),
+
+('Milkshake de Chocolate 500ml',   6, ROUND(RAND()*4  + 6 ,2), 'Milkshake cremoso de sorvete de chocolate com chantilly.',                           'imagens/milkshake_choc.png',          1),
+('Cappuccino Gelado 300ml',        6, ROUND(RAND()*3  + 5 ,2), 'Bebida gelada de café espresso com leite e espuma.',                                   'imagens/cappuccino_gelado.png',       1),
+('Suco Natural de Morango 300ml',  6, ROUND(RAND()*2  + 4 ,2), 'Suco 100% morango sem adição de açúcar.',                                             'imagens/suco_morango.png',            1);
 
 -- USUARIO CARRINHO – 30 linhas
-DELETE FROM usuarioCarrinho;      -- opcional
-INSERT INTO `usuarioCarrinho`
-(`usuarioId`, `produtoId`, `quantidade`, `tipoQuantidadeId`) VALUES
-(1,  1,  1.25, 2),
+DELETE FROM usuarioCarrinho; -- opcional
+INSERT INTO usuarioCarrinho (usuarioId, produtoId, quantidade, tipoQuantidadeId) VALUES
+(1,  1,  1.25, 1),
 (2,  2,  2,    1),
 (3,  5,  1,    1),
-(4,  6,  0.80, 2),
+(4,  6,  0.80, 1),
 (5,  7,  3,    1),
-(6,  9,  1.50, 2),
+(6,  9,  1.50, 1),
 (7, 12,  2,    1),
-(8, 14,  0.90, 2),
+(8, 14,  0.90, 1),
 (9, 15,  4,    1),
 (10,18,  2,    1),
-(1, 20,  1.20, 2),
-(2, 22,  0.75, 2),
+(1, 20,  1.20, 1),
+(2, 22,  0.75, 1),
 (3, 23,  1,    1),
 (4, 24,  1,    1),
 (5, 25,  2,    1),
-(6, 26,  1.30, 2),
+(6, 26,  1.30, 1),
 (7, 27,  6,    1),
-(8, 28,  0.65, 2),
+(8, 28,  0.65, 1),
 (9, 29,  1,    1),
-(10,30,  0.95, 2),
+(10,30,  0.95, 1),
 (1, 31,  2,    1),
-(2, 32,  1.40, 2),
+(2, 32,  1.40, 1),
 (3, 33,  3,    1),
 (4,  3,  2,    1),
-(5,  4,  1.10, 2),
+(5,  4,  1.10, 1),
 (6, 10,  1,    1),
-(7, 11,  1.80, 2),
+(7, 11,  1.80, 1),
 (8, 13,  6,    1),
-(9, 17,  1.05, 2),
+(9, 17,  1.05, 1),
 (10,19,  3,    1);
 
 INSERT INTO `compra` (`usuarioId`, `data`, `formaPagamentoId`, `statusId`) VALUES
@@ -129,37 +134,36 @@ INSERT INTO `compra` (`usuarioId`, `data`, `formaPagamentoId`, `statusId`) VALUE
 (FLOOR(RAND() * 10) + 1, DATE_ADD(CURDATE(), INTERVAL FLOOR(RAND() * 41) - 30 DAY), FLOOR(RAND() * 3) + 1, FLOOR(RAND() * 2) + 1);
 
 -- COMPRA PRODUTO – idCompra 1-10
-DELETE FROM compraProduto;        -- opcional
-INSERT INTO `compraProduto`
-(`idCompra`, `idProduto`, `valor`, `quantidade`, `tipoQuantidadeId`) VALUES
-(FLOOR(RAND()*10)+1, 1,  ROUND(RAND()*200+10,2), 1.30, 2),
+DELETE FROM compraProduto; -- opcional
+INSERT INTO compraProduto (idCompra, idProduto, valor, quantidade, tipoQuantidadeId) VALUES
+(FLOOR(RAND()*10)+1, 1,  ROUND(RAND()*200+10,2), 1.30, 1),
 (FLOOR(RAND()*10)+1, 2,  ROUND(RAND()* 50+10,2), 2,    1),
-(FLOOR(RAND()*10)+1, 4,  ROUND(RAND()*120+20,2), 0.85, 2),
+(FLOOR(RAND()*10)+1, 4,  ROUND(RAND()*120+20,2), 0.85, 1),
 (FLOOR(RAND()*10)+1, 5,  ROUND(RAND()*150+30,2), 1,    1),
-(FLOOR(RAND()*10)+1, 6,  ROUND(RAND()*220+40,2), 1.10, 2),
+(FLOOR(RAND()*10)+1, 6,  ROUND(RAND()*220+40,2), 1.10, 1),
 (FLOOR(RAND()*10)+1, 7,  ROUND(RAND()* 15+ 4,2), 3,    1),
-(FLOOR(RAND()*10)+1, 9,  ROUND(RAND()*190+50,2), 0.90, 2),
+(FLOOR(RAND()*10)+1, 9,  ROUND(RAND()*190+50,2), 0.90, 1),
 (FLOOR(RAND()*10)+1,12,  ROUND(RAND()* 20+ 5,2), 2,    1),
 (FLOOR(RAND()*10)+1,13,  ROUND(RAND()* 12+ 4,2), 2,    1),
-(FLOOR(RAND()*10)+1,14,  ROUND(RAND()*180+40,2), 1.00, 2),
+(FLOOR(RAND()*10)+1,14,  ROUND(RAND()*180+40,2), 1.00, 1),
 (FLOOR(RAND()*10)+1,15,  ROUND(RAND()* 40+10,2), 2,    1),
-(FLOOR(RAND()*10)+1,17,  ROUND(RAND()*120+30,2), 1.25, 2),
+(FLOOR(RAND()*10)+1,17,  ROUND(RAND()*120+30,2), 1.25, 1),
 (FLOOR(RAND()*10)+1,18,  ROUND(RAND()* 12+ 4,2), 2,    1),
 (FLOOR(RAND()*10)+1,19,  ROUND(RAND()* 22+ 7,2), 1,    1),
-(FLOOR(RAND()*10)+1,20,  ROUND(RAND()* 25+ 8,2), 0.70, 2),
-(FLOOR(RAND()*10)+1,21,  ROUND(RAND()*210+55,2), 1.15, 2),
-(FLOOR(RAND()*10)+1,22,  ROUND(RAND()* 30+10,2), 0.80, 2),
+(FLOOR(RAND()*10)+1,20,  ROUND(RAND()* 25+ 8,2), 0.70, 1),
+(FLOOR(RAND()*10)+1,21,  ROUND(RAND()*210+55,2), 1.15, 1),
+(FLOOR(RAND()*10)+1,22,  ROUND(RAND()* 30+10,2), 0.80, 1),
 (FLOOR(RAND()*10)+1,23,  ROUND(RAND()* 80+20,2), 1,    1),
 (FLOOR(RAND()*10)+1,24,  ROUND(RAND()*100+30,2), 1,    1),
 (FLOOR(RAND()*10)+1,25,  ROUND(RAND()* 50+15,2), 2,    1),
-(FLOOR(RAND()*10)+1,26,  ROUND(RAND()*140+30,2), 1.60, 2),
+(FLOOR(RAND()*10)+1,26,  ROUND(RAND()*140+30,2), 1.60, 1),
 (FLOOR(RAND()*10)+1,27,  ROUND(RAND()* 10+ 3,2), 6,    1),
-(FLOOR(RAND()*10)+1,28,  ROUND(RAND()* 42+18,2), 0.60, 2),
+(FLOOR(RAND()*10)+1,28,  ROUND(RAND()* 42+18,2), 0.60, 1),
 (FLOOR(RAND()*10)+1,29,  ROUND(RAND()* 90+25,2), 1,    1),
-(FLOOR(RAND()*10)+1,30,  ROUND(RAND()*190+45,2), 1.05, 2),
+(FLOOR(RAND()*10)+1,30,  ROUND(RAND()*190+45,2), 1.05, 1),
 (FLOOR(RAND()*10)+1,31,  ROUND(RAND()* 15+ 5,2), 2,    1),
-(FLOOR(RAND()*10)+1,32,  ROUND(RAND()*130+25,2), 1.40, 2),
+(FLOOR(RAND()*10)+1,32,  ROUND(RAND()*130+25,2), 1.40, 1),
 (FLOOR(RAND()*10)+1,33,  ROUND(RAND()* 25+ 7,2), 1,    1),
 (FLOOR(RAND()*10)+1, 3,  ROUND(RAND()* 30+ 8,2), 2,    1),
-(FLOOR(RAND()*10)+1,11,  ROUND(RAND()*160+40,2), 1.20, 2);
+(FLOOR(RAND()*10)+1,11,  ROUND(RAND()*160+40,2), 1.20, 1);
 

@@ -1,6 +1,6 @@
-drop database if exists novilho;
-create database novilho;
-use novilho;
+drop database if exists vava_doces;
+create database vava_doces;
+use vava_doces;
  
 /* Script SQL para criação das tabelas e relacionamentos */
  

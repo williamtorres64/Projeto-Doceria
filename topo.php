@@ -46,7 +46,7 @@ include_once("conexao.php");
     #search-button {
         padding: 0 12px;                  /* remove padding vertical extra */
         border: none;
-        background: #8b0000;
+        background: #748873;
         color: #fff;
         border-radius: 0 20px 20px 0;
         cursor: pointer;

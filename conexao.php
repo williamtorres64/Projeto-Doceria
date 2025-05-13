@@ -4,7 +4,7 @@ error_reporting(E_ERROR | E_WARNING);
 $host = "localhost";
 $user = "petruci";
 $pass = "123";
-$dbname = "novilho";
+$dbname = "vava_doces";
 
 // Cria a conexão com o banco usando MySQLi orientado a objetos
 $link = new mysqli($host, $user, $pass, $dbname);
