@@ -60,13 +60,17 @@ include_once("conexao.php");
     #search-button:hover {
         background: #45a049;
     }
+#logo {
+    border-radius: 30px;
+    width: 50px;
+}
 </style>
 
 <!-- Cabeçalho da página -->
 <header>
     <!-- Logo da empresa com link para a página inicial -->
     <div class="logo">
-        <a href="index.php"><img src="imagens/logo.png" alt="logo"></a>
+        <a href="index.php"><img src="imagens/logo.png" alt="logo" id="logo"></a>
     </div>
     
     <!-- Link para o painel administrativo -->
