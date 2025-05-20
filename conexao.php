@@ -3,7 +3,7 @@ error_reporting(E_ERROR | E_WARNING);
 // Define as informações de conexão com o banco de dados
 $host = "localhost";
 $user = "root";
-$pass = "aurora";
+$pass = "123";
 $dbname = "vava_doces";
 
 // Cria a conexão com o banco usando MySQLi orientado a objetos
